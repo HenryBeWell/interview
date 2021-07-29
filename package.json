@@ -1,0 +1,27 @@
+{
+  "name": "gitbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-multipart": "^0.3.0",
+    "gitbook-plugin-summary": "^1.1.0",
+    "gitbook-plugin-theme-comscore": "0.0.3",
+    "gitbook-plugin-toggle-chapters": "^0.0.3",
+    "gitbook-theme-comscore": "^0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenryBeWell/gitbook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenryBeWell/gitbook/issues"
+  },
+  "homepage": "https://github.com/HenryBeWell/gitbook#readme"
+}
