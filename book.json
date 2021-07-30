@@ -1,5 +1,5 @@
 {
-  "title": "title",
+  "title": "Interview",
   "author": "",
   "plugins": [
     "-lunr",
@@ -9,7 +9,6 @@
     "disqus",
     "github-buttons",
     "editlink",
-    "ga",
     "-highlight",
     "prism",
     "bibtex-indexed-cite",
@@ -20,29 +19,33 @@
     "expandable-chapters-small",
     "donate"
   ],
+
   "pluginsConfig": {
     "search-pro": {
       "cutWordLib": "nodejieba",
       "defineWord": ["Gitbook Use"]
     },
+	"editlink": {
+      "base": "https://github.com/henrybewell/interview/blob/master",
+      "label": "Edit",
+      "multilingual": false
+    },
     "anchor-navigation-ex": {
       "showLevel": false
     },
     "disqus": {
-      "shortName": "gitbook-template"
+      "shortName": "interview"
     },
     "github-buttons": {
       "buttons": [{
         "user": "henrybewell",
-        "repo": "gitbook-template",
+        "repo": "interview",
         "type": "star",
         "size": "small",
         "count": true
       }]
     },
-    "ga": {
-      "token": "UA-131910384-3"
-    },
+	
     "prism": {
       "ignore": [
         "mermaid",
