@@ -1,6 +1,8 @@
 {
   "title": "Interview",
-  "author": "",
+  "author": "HenryBeWell",
+  "description" : "面试中的一些技术总结",
+  "language" : "zh-hans",
   "plugins": [
     "-lunr",
     "-search",
