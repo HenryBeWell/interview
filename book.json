@@ -10,7 +10,7 @@
     "github-buttons",
     "editlink",
     "-highlight",
-    "mathjax",
+    "mathjax@2.7.6",
     "prism",
     "bibtex-indexed-cite",
     "anchor-navigation-ex",
