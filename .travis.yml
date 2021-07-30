@@ -17,7 +17,7 @@ install:                             #install阶段 安装依赖
 
 
 script:                              #script阶段 运行脚本
-  - book sm                          #利用安装的工具gitbook-summary自动生成SUMMARY.md文件
+  - book sm -i "node_modules"        #利用安装的工具gitbook-summary自动生成SUMMARY.md文件
   - gitbook build                    #gitbook编译，生成静态网站站点_book
 
 after_success:                        #script阶段之后执行
