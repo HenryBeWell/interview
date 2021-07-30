@@ -22,6 +22,8 @@ script:                              #script阶段 运行脚本
   
 
 after_script:                        #script阶段之后执行
+  - git config --local user.name "travis-ci"
+  - git config --local user.email "deploy@travis-ci.org"
   - cd _book                         #进入_book目录
   - git init                         
   
