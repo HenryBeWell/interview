@@ -3,13 +3,18 @@
   "author": "HenryBeWell",
   "description" : "面试中的一些技术总结",
   "language" : "zh-hans",
+  "extension": null,
+  "generator": "site",
+  "introduction": {
+        "path": "README.md"
+    },
   "plugins": [
     "-lunr",
     "-search",
     "search-pro",
     "-sharing",
     "disqus",
-    "summary",
+
     "github-buttons",
     "editlink",
     "-highlight",
