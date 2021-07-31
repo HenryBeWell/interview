@@ -5,6 +5,7 @@
   "language" : "zh-hans",
   "extension": null,
   "generator": "site",
+  "root": ".",
   "introduction": {
         "path": "README.md"
     },
@@ -15,6 +16,7 @@
     "-sharing",
     "disqus",
     "ga",
+    "gtoc",
     "github-buttons",
     "editlink",
     "-highlight",
@@ -33,6 +35,11 @@
       "cutWordLib": "nodejieba",
       "defineWord": ["Gitbook Use"]
     },
+    "fontSettings": {
+        "theme": "white",
+        "family": "serif",
+        "size": 2
+        },
     "theme-default": {
       "showLevel": true
     },
