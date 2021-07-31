@@ -40,9 +40,6 @@
         "family": "serif",
         "size": 2
         },
-    "theme-default": {
-      "showLevel": true
-    },
 	"editlink": {
       "base": "https://github.com/henrybewell/interview/blob/master",
       "label": "Edit",
