@@ -14,7 +14,7 @@
     "search-pro",
     "-sharing",
     "disqus",
-
+    "ga",
     "github-buttons",
     "editlink",
     "-highlight",
@@ -28,11 +28,13 @@
     "expandable-chapters-small",
     "donate"
   ],
-
   "pluginsConfig": {
     "search-pro": {
       "cutWordLib": "nodejieba",
       "defineWord": ["Gitbook Use"]
+    },
+    "theme-default": {
+      "showLevel": true
     },
 	"editlink": {
       "base": "https://github.com/henrybewell/interview/blob/master",
@@ -44,6 +46,9 @@
     },
     "disqus": {
       "shortName": "interview"
+    },
+    "ga": {
+      "token": "UA-139847070-1"
     },
     "github-buttons": {
       "buttons": [{
