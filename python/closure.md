@@ -26,7 +26,7 @@ out_func()      # 调用外部函数
 
 输出结果：
 
-```python
+```
 the first inner func
 the second inner func
 ```
@@ -70,23 +70,29 @@ demo2()     # 17
 
 ```python
 # 修改闭包变量实例
-def outer(a):   # outer是外部函数，a和b都是外部函数的临时变量
-    b = 10      # a和b都是闭包变量
-    c = [a]     # 这里对应修改闭包变量的方法2
-    
-    def inner():    # inner是内部函数
+def outer(a):  # outer是外部函数，a和b都是外部函数的临时变量
+    b = 10  # a和b都是闭包变量
+    c = [a]  # 这里对应修改闭包变量的方法2
+
+    def inner():  # inner是内部函数
         # 内函数中想修改闭包变量
         nonlocal b  # 方法1 nonlocal关键字声明
         b += 1
-		# 方法2 把闭包变量修改成可变数据类型，比如：列表
-        c[0] += 1   
-    print(c[0], b)
-        
-    return inner    # 外部函数返回内部函数的引用
+
+        c[0] += 1  # 方法2 把闭包变量修改成可变数据类型，比如：列表
+        print(f'after inner b: {b}, c:{c}')
+        return b, c
+
+    print(f'before inner b: {b}, c:{c}')
+
+    return inner  # 外部函数返回内部函数的引用
 
 
 demo = outer(5)
-demo()      # 6 11
+print(demo())
+# before inner b: 10, c:[5]
+# after inner b: 11, c:[6]
+# (11, [6])
 ```
 
 **注意：**使用闭包的过程中，一旦外部函数被调用一次返回了内部函数的引用，虽然每次调用内部函数是开启一个函数执行过后消亡，但是闭包变量实际上只有一份，每次开启内部函数都在使用同一份闭包变量，如下代码：
