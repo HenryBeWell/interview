@@ -48,7 +48,7 @@ True
 
 然而，假如有冒充者（姑且叫他 Alexander Pedachenko 博士）生于1832年，声称他是 Charles L. Dodgson。这个冒充者的证件可能一样，但是Pedachenko博士不是 Dodgson 教授。这种情况如图 2 所示。
 
-![8-2](F:\Repos\interview\assets\images\equal.png)
+![8-2](..\assets\images\equal.png)
 
 图 **2**：**charles** 和 **lewis** 绑定同一个对象，**alex** 绑定另一个具有相同内容的对象 
 
