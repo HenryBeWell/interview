@@ -72,3 +72,6 @@ print(l)    # <generator object <genexpr> at 0x000002004151AA50>
 
 ```
 
+## 参考
+
+1. 《流畅的Python》第十四章
