@@ -116,7 +116,7 @@ print(demo(3))     # 14
 
 
 
-1: [Python 嵌套函数和闭包]:https://www.cnblogs.com/love9527/p/9022316.html2
+1: [Python 嵌套函数和闭包](https://www.cnblogs.com/love9527/p/9022316.html2)
 
-2: [深入浅出python闭包]:https://zhuanlan.zhihu.com/p/22229197
+2: [深入浅出python闭包](https://zhuanlan.zhihu.com/p/22229197)
 
