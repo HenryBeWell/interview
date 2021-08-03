@@ -69,7 +69,19 @@ print(l)    # <generator object <genexpr> at 0x000002004151AA50>
 ## 一种优雅的实现读取大文件的方式
 
 ```python
+import functools
 
+def chunk_file_reader(fp, block_size):
+    for chunk in iter(functools.partial(fp.read, block_size), bytes()):
+        yield chunk
+
+def do_something(chunk):
+    pass
+
+def main(file_path):
+    with open(file_path, 'rb') as fp:
+	    for chunk in chunk_file_reader(fp, 1024 * 1024 * 1):
+            do_something(chunk)
 ```
 
 ## 参考
