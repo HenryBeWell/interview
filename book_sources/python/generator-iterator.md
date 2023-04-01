@@ -4,7 +4,7 @@
 
 我们先了解下**可迭代对象**和**迭代器**之间的关系，在《流畅的Python》中，这样定义：
 
-![iter](..\assets\images\iteration_img.png)
+![iter](/assets/images/iteration_img.png)
 
 具体的 **Iterable.\__iter__** 方法应该返回一个 **Iterator** 实例，具体的 **Iterator** 类必须实现 **\__next__** 方法，**Iterator.\__iter__** 方法直接返回实例本身 。
 
