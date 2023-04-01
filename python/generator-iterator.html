@@ -1,0 +1,766 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>生成器与迭代器 · Interview</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="HenryBeWell">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-gtoc/gtoc.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bibtex-indexed-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="gc.html" />
+    
+    
+    <link rel="prev" href="decorator.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"henrybewell","repo":"interview","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../container/">
+            
+                <a href="../container/">
+            
+                    
+                    容器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../container/docker.html">
+            
+                <a href="../container/docker.html">
+            
+                    
+                    docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../container/kubernetes.html">
+            
+                <a href="../container/kubernetes.html">
+            
+                    
+                    kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Python基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="copy.html">
+            
+                <a href="copy.html">
+            
+                    
+                    拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="closure.html">
+            
+                <a href="closure.html">
+            
+                    
+                    闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="decorator.html">
+            
+                <a href="decorator.html">
+            
+                    
+                    装饰器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="generator-iterator.html">
+            
+                <a href="generator-iterator.html">
+            
+                    
+                    生成器与迭代器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="gc.html">
+            
+                <a href="gc.html">
+            
+                    
+                    垃圾回收机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="hash.html">
+            
+                <a href="hash.html">
+            
+                    
+                    字典与集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../mysql/">
+            
+                <a href="../mysql/">
+            
+                    
+                    Mysql数据库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../mysql/engine.html">
+            
+                <a href="../mysql/engine.html">
+            
+                    
+                    引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../mysql/transaction.html">
+            
+                <a href="../mysql/transaction.html">
+            
+                    
+                    事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../mysql/">
+            
+                <a href="../mysql/">
+            
+                    
+                    索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../redis/">
+            
+                <a href="../redis/">
+            
+                    
+                    Redis缓存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../redis/data_type.html">
+            
+                <a href="../redis/data_type.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../redis/endurance.html">
+            
+                <a href="../redis/endurance.html">
+            
+                    
+                    持久化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../redis/cache.html">
+            
+                <a href="../redis/cache.html">
+            
+                    
+                    缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../redis/Endurance.html">
+            
+                <a href="../redis/Endurance.html">
+            
+                    
+                    一致性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../os/">
+            
+                <a href="../os/">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../os/Concurrent.html">
+            
+                <a href="../os/Concurrent.html">
+            
+                    
+                    进程|线程|协程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../os/linux.html">
+            
+                <a href="../os/linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../network/">
+            
+                <a href="../network/">
+            
+                    
+                    网络知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../network/osi.html">
+            
+                <a href="../network/osi.html">
+            
+                    
+                    OSI七层模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../network/http.html">
+            
+                <a href="../network/http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../network/tcp.html">
+            
+                <a href="../network/tcp.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../network/question.html">
+            
+                <a href="../network/question.html">
+            
+                    
+                    网络中常见的问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >生成器与迭代器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x548C;&#x751F;&#x6210;&#x5668;"><b></b>&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x548C;&#x751F;&#x6210;&#x5668;</a></li><ul><li><span class="title-icon "></span><a href="#&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x548C;&#x8FED;&#x4EE3;&#x5668;"><b></b>&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x548C;&#x8FED;&#x4EE3;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x751F;&#x6210;&#x5668;"><b></b>&#x751F;&#x6210;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x4E00;&#x79CD;&#x4F18;&#x96C5;&#x7684;&#x5B9E;&#x73B0;&#x8BFB;&#x53D6;&#x5927;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;"><b></b>&#x4E00;&#x79CD;&#x4F18;&#x96C5;&#x7684;&#x5B9E;&#x73B0;&#x8BFB;&#x53D6;&#x5927;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;"><b></b>&#x53C2;&#x8003;</a></li></ul></ul></div><a href="#&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x548C;&#x751F;&#x6210;&#x5668;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x548C;&#x751F;&#x6210;&#x5668;"><a name="&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x548C;&#x751F;&#x6210;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x548C;&#x751F;&#x6210;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x548C;&#x751F;&#x6210;&#x5668;</h1>
+<h2 id="&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x548C;&#x8FED;&#x4EE3;&#x5668;"><a name="&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x548C;&#x8FED;&#x4EE3;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x548C;&#x8FED;&#x4EE3;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x548C;&#x8FED;&#x4EE3;&#x5668;</h2>
+<p>&#x6211;&#x4EEC;&#x5148;&#x4E86;&#x89E3;&#x4E0B;<strong>&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;</strong>&#x548C;<strong>&#x8FED;&#x4EE3;&#x5668;</strong>&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5728;&#x300A;&#x6D41;&#x7545;&#x7684;Python&#x300B;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<p><img src="images/iteration_img.png" alt="iter"></p>
+<p>&#x5177;&#x4F53;&#x7684; <strong>Iterable._<em>iter_</em></strong> &#x65B9;&#x6CD5;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <strong>Iterator</strong> &#x5B9E;&#x4F8B;&#xFF0C;&#x5177;&#x4F53;&#x7684; <strong>Iterator</strong> &#x7C7B;&#x5FC5;&#x987B;&#x5B9E;&#x73B0; <strong>_<em>next_</em></strong> &#x65B9;&#x6CD5;&#xFF0C;<strong>Iterator._<em>iter_</em></strong> &#x65B9;&#x6CD5;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x5B9E;&#x4F8B;&#x672C;&#x8EAB; &#x3002;</p>
+<p>abc.Iterator &#x7C7B;&#xFF0C;&#x6458;&#x81EA;<a href="https://hg.python.org/cpython/file/tip/Lib/_collections_abc.py#l259" target="_blank">Lib/_collections_abc.py</a></p>
+<pre class="language-"><code class="lang-python"><span class="token keyword">class</span> <span class="token class-name">Iterable</span><span class="token punctuation">(</span>metaclass<span class="token operator">=</span>ABCMeta<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    __slots__ <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">__iter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">while</span> <span class="token boolean">False</span><span class="token punctuation">:</span>
+            <span class="token keyword">yield</span> <span class="token boolean">None</span>
+
+    <span class="token decorator annotation punctuation">@classmethod</span>
+    <span class="token keyword">def</span> <span class="token function">__subclasshook__</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> C<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> cls <span class="token keyword">is</span> Iterable<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> _check_methods<span class="token punctuation">(</span>C<span class="token punctuation">,</span> <span class="token string">&quot;__iter__&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> NotImplemented
+
+
+<span class="token keyword">class</span> <span class="token class-name">Iterator</span><span class="token punctuation">(</span>Iterable<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+    __slots__ <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token decorator annotation punctuation">@abstractmethod</span>
+    <span class="token keyword">def</span> <span class="token function">__next__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">&apos;Return the next item from the iterator. When exhausted, raise StopIteration&apos;</span>
+        <span class="token keyword">raise</span> StopIteration
+
+    <span class="token keyword">def</span> <span class="token function">__iter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self
+
+    <span class="token decorator annotation punctuation">@classmethod</span>
+    <span class="token keyword">def</span> <span class="token function">__subclasshook__</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> C<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> cls <span class="token keyword">is</span> Iterator<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> _check_methods<span class="token punctuation">(</span>C<span class="token punctuation">,</span> <span class="token string">&apos;__iter__&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;__next__&apos;</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> NotImplemented
+</code></pre>
+<p>&#x5176;&#x4E2D;&#x7684;&#x9B54;&#x672F;&#x65B9;&#x6CD5;<code>__subclasshook__</code>&#x4F5C;&#x7528;&#x5728;&#x4E8E;&#xFF0C;&#x65B9;&#x4FBF;&#x68C0;&#x67E5;&#x5BF9;&#x8C61;x&#x662F;&#x5426;&#x662F;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x5373;&#x4F7F;&#x5BF9;&#x8C61; x &#x6240;&#x5C5E;&#x7684;&#x7C7B;&#x4E0D;&#x662F;Iterator &#x7C7B;&#x7684;&#x771F;&#x5B9E;&#x5B50;&#x7C7B;&#x6216;&#x865A;&#x62DF;&#x5B50;&#x7C7B;&#xFF0C;&#x4E5F;&#x80FD;&#x8FD9;&#x6837;&#x68C0;&#x67E5;&#x3002;</p>
+<h2 id="&#x751F;&#x6210;&#x5668;"><a name="&#x751F;&#x6210;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x6210;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x6210;&#x5668;</h2>
+<p>&#x751F;&#x6210;&#x5668;&#x7B97;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x8BB0;&#x4F4F;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x63A5;&#x7740;&#x4E0A;&#x6B21;&#x8FD4;&#x56DE;&#x7684;&#x4F4D;&#x7F6E;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x3002;&#x751F;&#x6210;&#x5668;&#x80FD;&#x505A;&#x5230;&#x8FED;&#x4EE3;&#x5668;&#x80FD;&#x505A;&#x7684;&#x6240;&#x6709;&#x4E8B;&#xFF0C;&#x800C;&#x4E14;&#x751F;&#x6210;&#x5668;&#x4E5F;&#x662F;&#x9AD8;&#x6548;&#x7684;&#xFF0C;&#x4F7F;&#x7528;&#x751F;&#x6210;&#x5668;&#x8868;&#x8FBE;&#x5F0F;&#x53D6;&#x4EE3;&#x5217;&#x8868;&#x89E3;&#x6790;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x8282;&#x7701;&#x5185;&#x5B58;&#x3002;&#x9664;&#x4E86;&#x521B;&#x5EFA;&#x548C;&#x4FDD;&#x5B58;&#x7A0B;&#x5E8F;&#x72B6;&#x6001;&#x7684;&#x81EA;&#x52A8;&#x65B9;&#x6CD5;&#xFF0C;&#x5F53;&#x53D1;&#x751F;&#x5668;&#x7EC8;&#x7ED3;&#x65F6;&#xFF0C;&#x8FD8;&#x4F1A;&#x81EA;&#x52A8;&#x629B;&#x51FA;StopIteration&#x5F02;&#x5E38;&#x3002;&#x5B83;&#x7684;&#x5B9E;&#x73B0;&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ol>
+<li>&#x51FD;&#x6570;&#x5185;&#x5305;&#x542B;<code>yield</code></li>
+<li><code>(I for I in range(10)</code></li>
+</ol>
+<pre class="language-"><code class="lang-python"><span class="token comment"># &#x4F7F;&#x7528;&#x5217;&#x8868;&#x63A8;&#x5BFC;&#x5F0F;&#x751F;&#x6210;&#x4E00;&#x4E2A;1&#x5230;10&#x7684;&#x5217;&#x8868;</span>
+l <span class="token operator">=</span> <span class="token punctuation">[</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span>    <span class="token comment"># [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+
+<span class="token comment"># &#x4F7F;&#x7528;&#x751F;&#x6210;&#x5668;&#x8868;&#x8FBE;&#x5F0F;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x751F;&#x6210;&#x5668;&#xFF08;&#x8FED;&#x4EE3;&#x5668;&#xFF09;</span>
+l <span class="token operator">=</span> <span class="token punctuation">(</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span>    <span class="token comment"># &lt;generator object &lt;genexpr&gt; at 0x000002004151AA50&gt;</span>
+</code></pre>
+<h2 id="&#x4E00;&#x79CD;&#x4F18;&#x96C5;&#x7684;&#x5B9E;&#x73B0;&#x8BFB;&#x53D6;&#x5927;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;"><a name="&#x4E00;&#x79CD;&#x4F18;&#x96C5;&#x7684;&#x5B9E;&#x73B0;&#x8BFB;&#x53D6;&#x5927;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x79CD;&#x4F18;&#x96C5;&#x7684;&#x5B9E;&#x73B0;&#x8BFB;&#x53D6;&#x5927;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x79CD;&#x4F18;&#x96C5;&#x7684;&#x5B9E;&#x73B0;&#x8BFB;&#x53D6;&#x5927;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;</h2>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> functools
+
+<span class="token keyword">def</span> <span class="token function">chunk_file_reader</span><span class="token punctuation">(</span>fp<span class="token punctuation">,</span> block_size<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> chunk <span class="token keyword">in</span> <span class="token builtin">iter</span><span class="token punctuation">(</span>functools<span class="token punctuation">.</span>partial<span class="token punctuation">(</span>fp<span class="token punctuation">.</span>read<span class="token punctuation">,</span> block_size<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">yield</span> chunk
+
+<span class="token keyword">def</span> <span class="token function">do_something</span><span class="token punctuation">(</span>chunk<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span>file_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>file_path<span class="token punctuation">,</span> <span class="token string">&apos;rb&apos;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> chunk <span class="token keyword">in</span> chunk_file_reader<span class="token punctuation">(</span>fp<span class="token punctuation">,</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            do_something<span class="token punctuation">(</span>chunk<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h2>
+<ol>
+<li>&#x300A;&#x6D41;&#x7545;&#x7684;Python&#x300B;&#x7B2C;&#x5341;&#x56DB;&#x7AE0;</li>
+</ol>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://github.com/henrybewell" target="_blank">henrybewell</a>&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A; 2023-04-01 16:52:04 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="decorator.html" class="navigation navigation-prev " aria-label="Previous page: 装饰器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="gc.html" class="navigation navigation-next " aria-label="Next page: 垃圾回收机制">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"生成器与迭代器","level":"1.3.4","depth":2,"next":{"title":"垃圾回收机制","level":"1.3.5","depth":2,"path":"python/gc.md","ref":"python/gc.md","articles":[]},"previous":{"title":"装饰器","level":"1.3.3","depth":2,"path":"python/decorator.md","ref":"python/decorator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","disqus","ga","gtoc","github-buttons","editlink","-highlight","katex","prism","bibtex-indexed-cite","anchor-navigation-ex","page-footer-ex","splitter","copy-code-button","expandable-chapters-small","donate"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism-solarizedlight.css"]},"gtoc":{},"disqus":{"useIdentifier":false,"shortName":"interview"},"editlink":{"label":"Edit","multilingual":false,"base":"https://github.com/henrybewell/interview/blob/master"},"page-footer-ex":{"copyright":"By [henrybewell](https://github.com/henrybewell)，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于："},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://henrybewell.github.io/images/wechatpay.png","wechatText":"微信打赏"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"serif","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"bibtex-indexed-cite":{"path":"/"},"github-buttons":{"buttons":[{"user":"henrybewell","repo":"interview","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-139847070-1"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"HenryBeWell","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"Interview","language":"zh-hans","introduction":{"path":"README.md"},"bib":[],"gitbook":"*","description":"面试中的一些技术总结","extension":null},"file":{"path":"python/generator-iterator.md","mtime":"2023-04-01T16:52:04.906Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-01T16:52:57.018Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-gtoc/gtoc.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
