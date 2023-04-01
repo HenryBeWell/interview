@@ -11,7 +11,7 @@ jobs:
     name: Build and deploy
     runs-on: ubuntu-latest
     env:
-      MY_SECRET   : ${{secrets.DEPLOY_KEY}}
+      MY_SECRET   : ${{secrets.GH_ACCESS_TOKEN}}
       USER_NAME   : henrybewell
       USER_EMAIL  : zhanghengruic@gmail.com
       BOOK_DIR    : interview
